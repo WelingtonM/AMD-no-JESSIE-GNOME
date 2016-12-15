@@ -9,7 +9,7 @@ AMD no JESSIE + GNOME
 Após varias tentativas:punch: e erros:-1: de instalar o driver da AMD no GNOME algum tempo atraz.
 Finalmente consegui com exito as instalação perfeita.:+1:
 
-IMPORTANTE!:eyes:
+:eyes:IMPORTANTE!:eyes:
 >Não vou explicar o porque do porque, mas sim como fazer uma instalação perfeita OK.
 Mão na massa.
 
@@ -23,7 +23,7 @@ Este procedimento é para instalar o Catalyst mais atual nas seguintes interface
 De inicio necessitamos de algumas dependências, uma delas é o usuario FAKER:
 
 *TERMINAL*<br>
-**→ sudo apt-get install gcc g++ make dkms fakeroot**	
+:computer:**→ sudo apt-get install gcc g++ make dkms fakeroot**	
 
 ### 3 - Baixar o Driver Oficial
 Agora vamos baixar o driver oficial da Catlyst:<br><br>
@@ -39,43 +39,43 @@ Apos o Download do Catalyst, temos de descompactar para acessarmos os drivers de
 Supondo que você tenha realizado o Download na pasta padrão de Downloads. Nota se você realizar o Download em outro diretorio entre no diretorio que esta o driver.
 
 *TERMINAL*<br>
-**→ cd /home/Nome_do_seu_USER/Downloads**
+:computer:**→ cd /home/Nome_do_seu_USER/Downloads**
 
-**Nota!**:eyes: <br>
+:eyes:**Nota!**:eyes: <br>
 Para executar este procedimento você tem que estar logado como ROOT
 
 Estou supondo que você ja descompactou e entrou na pastinha fglrx-15.302 ou algo assim OK
 Vamos dar permissão de execução para o driver
 
 *TERMINAL*<br>
-**→ chmod +x amd-driver-installer-15.302-x86.x86_64.run**
+:computer:**→ chmod +x amd-driver-installer-15.302-x86.x86_64.run**
 
 Agora vamos instalar o driver
 
 *TERMINAL*<br>
-**→ ./amd-driver-installer-15.302-x86.x86_64.run**
+:computer:**→ ./amd-driver-installer-15.302-x86.x86_64.run**
 
 
-**ATENÇÃO**:boom: <br>
+:boom:**ATENÇÃO**:boom: <br>
 Preste muita atenção após instalar o driver NÃO REENICIE SUA MAQUINA
 Selecione NO se estiver em ingles ou não reeniciar se estiver em portugues OK
 
 Necessitamos criar um arquivo de configuraçao para o servidor X.
 
-**ATENÇAO**:boom:<br> 
+:boom:**ATENÇAO**:boom:<br> 
 Nao execute este comando abaixo, se nao vai dar erro.<br><br>
 :no_good:
 *TERMINAL*<br>
-**→ aticonfig –initial**
+:computer:**→ aticonfig –initial**
 
 
 ### 5 - Configurando GNOME
-APENAS USUARIOS DO GNOME
+:eyes:APENAS USUARIOS DO GNOME:eyes:
 
 Infelizmente Catalyst tem alguns problemas de compatibilidade com o GNOME, portanto, para corrigir, precisamos executar em um terminal os seguintes comandos:
 
 *TERMINAL*
-** → su
+:computer:** → su
 echo "export COGL_DRIVER=gl" >> /etc/environment
 echo "export COGL_OVERRIDE_GL_VERSION=1.4" >> /etc/environment
 echo "export COGL_RENDERER=GLX" >> /etc/environment
@@ -86,7 +86,7 @@ Os comandos anteriores ajudam mutter para detectar a versão do OpenGL, com isso
 Agora precisamos de ajuda mutter para detectar a versão do OpenGL que nossa sessão do GNOME pode carregar corretamente. Para fazer isso, execute em um terminal os seguintes comandos sem permissões de root:
 
 *TERMINAL*<br>
-**touch ~/.xsession
+:computer:**touch ~/.xsession
 echo "export COGL_DRIVER=gl" > ~/.xsession
 echo "export COGL_OVERRIDE_GL_VERSION=1.4" >> ~/.xsession
 echo "export COGL_RENDERER=GLX" >> ~/.xsession
@@ -97,7 +97,7 @@ Pronto com isso acabamos de instalar corretamente o DRIVER mais RECENTE da AMD
 Pode reiniciar o sistema e bom proveito
 
 ### 6 - OPS!!!
-APENAS USUARIO DE NOTBOOKS
+:eyes:APENAS USUARIO DE NOTBOOKS:eyes:
 
 Para os amigos que utilizam Notbooks
 Nos computadores portáteis, o crash do gnome-shell, motivo para a falha é um erro de X afirmando argumentos para XRRChangeOutputProperty chamado de mutter-3.14.4 / src / backends / x11 / meta-monitor-manager-xrandr.c: output_set_presentation_xrandr
@@ -115,13 +115,13 @@ Para os usuários da arquitetura i386, deve-se carregar os pacotes compilados e 
 Para instalar os pacotes, é necessário abrir um terminal na pasta onde você fez o download dos pacotes e executar o seguinte comando:
 
 *TERMINAL*<br>
-**→ dpkg -i *.deb**
+:computer:**→ dpkg -i *.deb**
 
 O comando acima executara de uma unica vez todos os pacotes .deb de uma unica vez.
 Se tivermos problemas com algumas dependências ao instalar pacotes, basta executar o seguinte comando:
 
 *TERMINAL*<br>
-**→ sudo apt-get -f install**
+:computer:**→ sudo apt-get -f install**
 
 Reenicie seu Notebook e seja feliz rodando o driver uriginal da AMD com suporte e todas as regalias da AMD:checkered_flag:
 
