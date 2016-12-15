@@ -6,11 +6,11 @@
 AMD no JESSIE + GNOME
 ### 1 - Preparando o Sistema
 
-Após varias tentativas e erros de instalar o driver da AMD no GNOME algum tempo atraz.
-Finalmente consegui com exito as instalação perfeita.
+Após varias tentativas:punch: e erros:-1: de instalar o driver da AMD no GNOME algum tempo atraz.
+Finalmente consegui com exito as instalação perfeita.:+1:
 
-IMPORTANTE!
-Não vou explicar o porque do porque, mas sim como fazer uma instalação perfeita OK.
+IMPORTANTE!:eyes:
+>Não vou explicar o porque do porque, mas sim como fazer uma instalação perfeita OK.
 Mão na massa.
 
 Este procedimento é para instalar o Catalyst mais atual nas seguintes interfaces do JESSIE:
@@ -22,50 +22,50 @@ Este procedimento é para instalar o Catalyst mais atual nas seguintes interface
 ### 2 - Configurando user fakerroot
 De inicio necessitamos de algumas dependências, uma delas é o usuario FAKER:
 
-*TERMINAL*
+*TERMINAL*<br>
 **→ sudo apt-get install gcc g++ make dkms fakeroot**	
 
 ### 3 - Baixar o Driver Oficial
-Agora vamos baixar o driver oficial da Catlyst:
+Agora vamos baixar o driver oficial da Catlyst:<br><br>
 *64*
-**http://support.amd.com/en-us/download/desktop?os=Linux%20x86_64**
+>**http://support.amd.com/en-us/download/desktop?os=Linux%20x86_64**
 
 *32*
-**http://support.amd.com/en-us/download/desktop?os=Linux%20x86**
+>**http://support.amd.com/en-us/download/desktop?os=Linux%20x86**
 
 
 ### 4 - Permiti e executar 
 Apos o Download do Catalyst, temos de descompactar para acessarmos os drivers de dentro da pasta.
 Supondo que você tenha realizado o Download na pasta padrão de Downloads. Nota se você realizar o Download em outro diretorio entre no diretorio que esta o driver.
 
-*TERMINAL*
+*TERMINAL*<br>
 **→ cd /home/Nome_do_seu_USER/Downloads**
 
-**Nota!**:eyes: 
+**Nota!**:eyes: <br>
 Para executar este procedimento você tem que estar logado como ROOT
 
 Estou supondo que você ja descompactou e entrou na pastinha fglrx-15.302 ou algo assim OK
 Vamos dar permissão de execução para o driver
 
-*TERMINAL*
+*TERMINAL*<br>
 **→ chmod +x amd-driver-installer-15.302-x86.x86_64.run**
 
 Agora vamos instalar o driver
 
-*TERMINAL*
+*TERMINAL*<br>
 **→ ./amd-driver-installer-15.302-x86.x86_64.run**
 
 
-**ATENÇÃO**:boom: 
+**ATENÇÃO**:boom: <br>
 Preste muita atenção após instalar o driver NÃO REENICIE SUA MAQUINA
 Selecione NO se estiver em ingles ou não reeniciar se estiver em portugues OK
 
 Necessitamos criar um arquivo de configuraçao para o servidor X.
 
-**ATENÇAO**:boom: 
-Nao execute este comando abaixo, se nao vai dar erro.
+**ATENÇAO**:boom:<br> 
+Nao execute este comando abaixo, se nao vai dar erro.<br><br>
 :no_good:
-*TERMINAL*
+*TERMINAL*<br>
 **→ aticonfig –initial**
 
 
@@ -85,7 +85,7 @@ Os comandos anteriores ajudam mutter para detectar a versão do OpenGL, com isso
 
 Agora precisamos de ajuda mutter para detectar a versão do OpenGL que nossa sessão do GNOME pode carregar corretamente. Para fazer isso, execute em um terminal os seguintes comandos sem permissões de root:
 
-*TERMINAL*
+*TERMINAL*<br>
 **touch ~/.xsession
 echo "export COGL_DRIVER=gl" > ~/.xsession
 echo "export COGL_OVERRIDE_GL_VERSION=1.4" >> ~/.xsession
@@ -114,13 +114,13 @@ Para corrigir esse erro, devemos recompilar "murmurar" com uma fonte de patch. P
 Para os usuários da arquitetura i386, deve-se carregar os pacotes compilados e embalados, então fique atento a este guia.
 Para instalar os pacotes, é necessário abrir um terminal na pasta onde você fez o download dos pacotes e executar o seguinte comando:
 
-*TERMINAL*
+*TERMINAL*<br>
 **→ dpkg -i *.deb**
 
 O comando acima executara de uma unica vez todos os pacotes .deb de uma unica vez.
 Se tivermos problemas com algumas dependências ao instalar pacotes, basta executar o seguinte comando:
 
-*TERMINAL*
+*TERMINAL*<br>
 **→ sudo apt-get -f install**
 
 Reenicie seu Notebook e seja feliz rodando o driver uriginal da AMD com suporte e todas as regalias da AMD:checkered_flag:
