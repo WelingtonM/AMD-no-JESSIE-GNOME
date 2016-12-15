@@ -74,8 +74,8 @@ Nao execute este comando abaixo, se nao vai dar erro.<br><br>
 
 Infelizmente Catalyst tem alguns problemas de compatibilidade com o GNOME, portanto, para corrigir, precisamos executar em um terminal os seguintes comandos:
 
-*TERMINAL*
-:computer:** → su
+*TERMINAL*<br>
+:computer: **→ su
 echo "export COGL_DRIVER=gl" >> /etc/environment
 echo "export COGL_OVERRIDE_GL_VERSION=1.4" >> /etc/environment
 echo "export COGL_RENDERER=GLX" >> /etc/environment
@@ -86,7 +86,7 @@ Os comandos anteriores ajudam mutter para detectar a versão do OpenGL, com isso
 Agora precisamos de ajuda mutter para detectar a versão do OpenGL que nossa sessão do GNOME pode carregar corretamente. Para fazer isso, execute em um terminal os seguintes comandos sem permissões de root:
 
 *TERMINAL*<br>
-:computer:**touch ~/.xsession
+:computer: **touch ~/.xsession
 echo "export COGL_DRIVER=gl" > ~/.xsession
 echo "export COGL_OVERRIDE_GL_VERSION=1.4" >> ~/.xsession
 echo "export COGL_RENDERER=GLX" >> ~/.xsession
