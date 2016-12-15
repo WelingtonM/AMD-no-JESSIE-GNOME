@@ -41,7 +41,7 @@ Supondo que você tenha realizado o Download na pasta padrão de Downloads. Nota
 *TERMINAL*
 **→ cd /home/Nome_do_seu_USER/Downloads**
 
-**Nota!** 
+**Nota!**:eyes: 
 Para executar este procedimento você tem que estar logado como ROOT
 
 Estou supondo que você ja descompactou e entrou na pastinha fglrx-15.302 ou algo assim OK
@@ -56,15 +56,15 @@ Agora vamos instalar o driver
 **→ ./amd-driver-installer-15.302-x86.x86_64.run**
 
 
-**ATENÇÃO** 
+**ATENÇÃO**:boom: 
 Preste muita atenção após instalar o driver NÃO REENICIE SUA MAQUINA
 Selecione NO se estiver em ingles ou não reeniciar se estiver em portugues OK
 
 Necessitamos criar um arquivo de configuraçao para o servidor X.
 
-**ATENÇAO** 
+**ATENÇAO**:boom: 
 Nao execute este comando abaixo, se nao vai dar erro.
-
+:no_good:
 *TERMINAL*
 **→ aticonfig –initial**
 
@@ -123,4 +123,6 @@ Se tivermos problemas com algumas dependências ao instalar pacotes, basta execu
 *TERMINAL*
 **→ sudo apt-get -f install**
 
-Reenicie seu Notebook e seja feliz rodando o driver uriginal da AMD com suporte e todas as regalias da AMD
+Reenicie seu Notebook e seja feliz rodando o driver uriginal da AMD com suporte e todas as regalias da AMD:checkered_flag:
+
+Meus parabéns você acabou de instalar corretamento o Driver da AMD :mortar_board::tada:
