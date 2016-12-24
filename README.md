@@ -9,6 +9,8 @@ AMD no JESSIE + GNOME
 Após varias tentativas:punch: e erros:-1: de instalar o driver da AMD no GNOME algum tempo atraz.
 Finalmente consegui com exito as instalação perfeita.:+1:
 
+:boom:ATENĆÃO: Eu testei apenas até a versão 8.3 do JESSIE AMD64, esta é a versão que estou utilizando atualmente, versões posteriores pode gerar algum tipo de erro se isto acontecer favor informar
+<br><br><br>
 :eyes:IMPORTANTE!:eyes:
 >Não vou explicar o porque do porque, mas sim como fazer uma instalação perfeita OK.
 Mão na massa.
@@ -63,7 +65,7 @@ Selecione NO se estiver em ingles ou não reeniciar se estiver em portugues OK
 Necessitamos criar um arquivo de configuraçao para o servidor X.
 
 :boom:**ATENÇAO**:boom:<br> 
-Nao execute este comando abaixo, se nao vai dar erro.<br><br>
+Execute o comando abaixo para iniciar a configuração do servidor X.<br><br>
 :no_good:
 *TERMINAL*<br>
 :computer:**→ aticonfig –initial**
@@ -75,23 +77,23 @@ Nao execute este comando abaixo, se nao vai dar erro.<br><br>
 Infelizmente Catalyst tem alguns problemas de compatibilidade com o GNOME, portanto, para corrigir, precisamos executar em um terminal os seguintes comandos:
 
 *TERMINAL*<br>
-:computer: **→ su
-echo "export COGL_DRIVER=gl" >> /etc/environment
-echo "export COGL_OVERRIDE_GL_VERSION=1.4" >> /etc/environment
-echo "export COGL_RENDERER=GLX" >> /etc/environment
-echo "export LD_PRELOAD=/usr/lib/fglrx/fglrx-libGL.so.1.2" >> /etc/environment**
+:computer: **→ su**
+- echo "export COGL_DRIVER=gl" >> /etc/environment
+- echo "export COGL_OVERRIDE_GL_VERSION=1.4" >> /etc/environment
+- echo "export COGL_RENDERER=GLX" >> /etc/environment
+- echo "export LD_PRELOAD=/usr/lib/fglrx/fglrx-libGL.so.1.2" >> /etc/environment
 
 Os comandos anteriores ajudam mutter para detectar a versão do OpenGL, com isso, o problema com o GDM é resolvido.
 
-Agora precisamos de ajuda mutter para detectar a versão do OpenGL que nossa sessão do GNOME pode carregar corretamente. Para fazer isso, execute em um terminal os seguintes comandos sem permissões de root:
+Agora precisamos de ajuda mutter para detectar a versão do OpenGL que nossa sessão do GNOME pode carregar corretamente. Para fazer isso, execute no terminal os seguintes comandos :eyes: SEM ESTAR LOGADO COMO ROOT:
 
 *TERMINAL*<br>
-:computer: **touch ~/.xsession
-echo "export COGL_DRIVER=gl" > ~/.xsession
-echo "export COGL_OVERRIDE_GL_VERSION=1.4" >> ~/.xsession
-echo "export COGL_RENDERER=GLX" >> ~/.xsession
-echo "export LD_PRELOAD=/usr/lib/fglrx/fglrx-libGL.so.1.2" >> ~/.xsession
-echo "gnome-session" >> ~/.xsession**
+:computer: **touch ~/.xsession**
+- echo "export COGL_DRIVER=gl" > ~/.xsession
+- echo "export COGL_OVERRIDE_GL_VERSION=1.4" >> ~/.xsession
+- echo "export COGL_RENDERER=GLX" >> ~/.xsession
+- echo "export LD_PRELOAD=/usr/lib/fglrx/fglrx-libGL.so.1.2" >> ~/.xsession
+- echo "gnome-session" >> ~/.xsession
 
 Pronto com isso acabamos de instalar corretamente o DRIVER mais RECENTE da AMD
 Pode reiniciar o sistema e bom proveito
